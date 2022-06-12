@@ -9,12 +9,12 @@ int main() {
     char symbol;
     std::cout << "Vvedite simvol -";
     std::cin >> symbol;
-    std::cout << std::endl;
+    s = symbol;
+    s = symbol + s;
     std::cout << "Vvedite visotu pyramydi(max 50) -";
     int high;
-    s = symbol;
-    s = symbol+s;
     std::cin >> high;
+    std::cout << std::endl;
     
     for (int i{}; i < high; i++)
     {
