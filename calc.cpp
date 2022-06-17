@@ -2,16 +2,16 @@
 #include <cstdlib>
 #include <cmath>
 
-double firstNum, secondNum;
-char typeOfOper;
-
-double additionOperation(double *a, double *b);
-double subtractionOperation(double *a, double *b);
-double multiplicationOperation(double *a, double *b);
-double divisionOperation(double *a, double *b);
+double additionOperation(double a, double b);
+double subtractionOperation(double a, double b);
+double multiplicationOperation(double a, double b);
+double divisionOperation(double a, double b);
 
 int main()
 {
+    double firstNum, secondNum;
+    char typeOfOper;
+    
     while (true)
     {
         std::cout << "Please enter first number, type of arithmetic operation +, - , *, / ^, second number: \n";
@@ -20,16 +20,16 @@ int main()
         switch (typeOfOper)
         {
         case '+':
-            std::cout << "Result = " << additionOperation(&firstNum, &secondNum) << "\n";
+            std::cout << "Result = " << additionOperation(firstNum, secondNum) << "\n";
             break;
         case '-':
-            std::cout << "Result = " << subtractionOperation(&firstNum, &secondNum) << "\n";
+            std::cout << "Result = " << subtractionOperation(firstNum, secondNum) << "\n";
             break;
         case '*':
-            std::cout << "Result = " << multiplicationOperation(&firstNum, &secondNum) << "\n";
+            std::cout << "Result = " << multiplicationOperation(firstNum, secondNum) << "\n";
             break;
         case '/':
-            std::cout << "Result = " << divisionOperation(&firstNum, &secondNum) << "\n";
+            std::cout << "Result = " << divisionOperation(firstNum, secondNum) << "\n";
             break;
         case '^':
             std::cout << "Result = " << pow(firstNum, secondNum) << "\n";
@@ -42,22 +42,22 @@ int main()
     return 0;
 }
 
-double additionOperation(double *a, double *b)
+double additionOperation(double a, double b)
 {
-    return *a + *b;
+    return a + b;
 }
 
-double subtractionOperation(double *a, double *b)
+double subtractionOperation(double a, double b)
 {
-    return *a - *b;
+    return a - b;
 }
 
-double multiplicationOperation(double *a, double *b)
+double multiplicationOperation(double a, double b)
 {
-    return *a * *b;
+    return a * b;
 }
 
-double divisionOperation(double *a, double *b)
+double divisionOperation(double a, double b)
 {
-    return *a / *b;
+    return a / b;
 }

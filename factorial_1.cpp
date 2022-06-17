@@ -2,7 +2,7 @@
 
 unsigned long long int factorialCalculate(unsigned short *number)
 {
-    static unsigned long long int factorial{1};
+    unsigned long long int factorial{1};
 
     for (int i{1}; i <= *number; ++i)
     {

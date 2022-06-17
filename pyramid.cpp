@@ -1,11 +1,11 @@
 #include <iostream>
 
-void printPyramid(int *height, char *symbol)
+void printPyramid(int height, char symbol)
 {
-    int p{*height};
+    int p{height};
     int symbolInRow{1};
 
-    for (int i{1}; i <= *height; ++i)
+    for (int i{1}; i <= height; ++i)
     {
         for (int j{1}; j <= p - 1; ++j)
         {
@@ -13,7 +13,7 @@ void printPyramid(int *height, char *symbol)
         }
         for (int k{1}; k <= symbolInRow; ++k)
         {
-            std::cout << *symbol;
+            std::cout << symbol;
         }
         --p;
         symbolInRow = symbolInRow + 2;
@@ -32,7 +32,7 @@ int main()
     std::cout << "Please enter symbol of the pyramid: ";
     std::cin >> symbolPyramid;
 
-    printPyramid(&heightPyramid, &symbolPyramid);
+    printPyramid(heightPyramid, symbolPyramid);
 
     return 0;
 }
