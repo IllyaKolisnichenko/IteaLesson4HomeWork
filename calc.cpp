@@ -17,7 +17,7 @@ void multipl(double a, double b)
     std::cout << a << " * " << b << " = " << a * b << std::endl;
 }
 
-void givision(double a, double b)
+void division(double a, double b)
 {
     if (a == 0 && b == 0)
         std::cout << "Result is undefined\a" << std::endl; 
@@ -31,7 +31,7 @@ void givision(double a, double b)
 
 void square(double a, double b)
 {
-    std::cout << a << " √ " << b << " = " << pow(a, 1 / b) << std::endl;
+    std::cout << a << " ^ " << b << " = " << pow(a, 1 / b) << std::endl;
 }
 
 double data()
@@ -51,16 +51,16 @@ double data()
     }
 }
 
-char sign()
+char signature()
 {
     while (true)
     {
-        char sg;
+        char sign;
         std::cout << "Enter the sign of the required operation: +, -, *, / , ^: ";
-        std::cin >> sg;
+        std::cin >> sign;
         std::cin.ignore(32767, '\n');
-        if (sg == '+' || sg == '-' || sg == '*' || sg == '/' || sg == '^')
-            return sg;
+        if (sign == '+' || sign == '-' || sign == '*' || sign == '/' || sign == '^')
+            return sign;
         else std::cout << "Input is invalid.  Please try again.\n";
     }
 }
@@ -69,13 +69,24 @@ int main()
 {
     std::cout << "Welcome to calculator!\n\n";
     double a = data();
-    char sg = sign();
+    char sign = signature();
     double b = data();
-    if (sg == '+') addit(a, b);
-    else if (sg == '-') subtract(a, b);
-    else if (sg == '*') multipl(a, b);
-    else if (sg == '/') givision(a, b);
-    else if (sg == '^') square(a, b);
-    else std::cout << "Something is wrong. Try again.";
+    switch (sign)
+    {
+    case '+': addit(a, b);
+        break;
+    case '-': subtract(a, b);
+        break;
+    case '*': multipl(a, b);
+        break;
+    case '/': division(a, b);
+        break;
+    case '^': square(a, b);
+        break;
+    default: std::cout << "Something is wrong. Try again.";
+        break;
+    }
+
     return 0;
 }
+
