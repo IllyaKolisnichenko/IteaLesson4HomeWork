@@ -1,17 +1,5 @@
 #include <iostream>
 
-// might aswell be realized w/ macros
-// #define CALC_ADD(num1, num2) (num1 + num2)
-// #define CALC_SUBTR(num1, num2) (num1 - num2)
-// #define CALC_MULT(num1, num2) ((num1) * (num2))
-// #define CALC_DIV(num1, num2) ((num1) / (num2))
-
-// + 43
-// - 45
-// * 42
-// / 47
-// ^ 94
-
 int multiply(int num1, int num2) {
     return num1 * num2;
 }
@@ -50,24 +38,20 @@ int main() {
     std::cout << "Enter second number:";
     std::cin >> secondNumber;
 
-    // if(mathOperator == 43) {
-    //     std::cout << "+";
-    //     return 0;
-    // }
     switch (mathOperator) {
-    case 43:
+    case '+':
         std::cout << "Result: " << firstNumber << mathOperator << secondNumber << "=" << add(firstNumber, secondNumber);
         break;
-    case 45:
+    case '-':
         std::cout << "Result: " << firstNumber << mathOperator << secondNumber << "=" << subtract(firstNumber, secondNumber);
         break;
-    case 42:
+    case '*':
         std::cout << "Result: " << firstNumber << mathOperator << secondNumber << "=" << multiply(firstNumber, secondNumber);
         break;
-    case 47:
+    case '/':
         std::cout << "Result: " << firstNumber << mathOperator << secondNumber << "=" << divide(firstNumber, secondNumber);
         break;
-    case 94:
+    case '^':
         std::cout << "Result of powering " << firstNumber << " to exponent " << secondNumber << " = " << power(firstNumber, secondNumber);
         break;
     default:
