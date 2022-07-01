@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+float a, b, c;
+char d;
+int p;
+int main()
+{
+
+    while (p != 2)
+    {
+        {
+           cout <<"Первая цифра ";
+            cin >> a;
+            cout << "Действие с цифрами ";
+            cin >> d;
+            cout << "Вторая цифра ";
+            cin >> b;
+            if (d == '+')
+                c = a + b;
+            if (d == '-')
+                c = a - b;
+            if (d == '*')
+                c = a * b;
+            if (d == '/')
+                c = a / b;
+        }
+        
+        cout << "Результат =" << c <<endl;{
+            break;
+        }
+    }
+   
+}

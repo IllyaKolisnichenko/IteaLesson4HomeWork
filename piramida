@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+void p(int x, char y)
+{
+for (int i = 0; i <= x; ++i)
+    {
+        for (int j = 0; j <= x - i; ++j)
+        {cout << " ";}
+        for (int j = (x - 2 * i)+1; j <= x; ++j)
+        {cout << y;}
+        cout << "\n";
+    }
+}
+
+int main()
+{
+    int x;
+    char y;
+    cout << "Введите размер новой пирамиды: ";
+    cin >> x;
+    cout << "Введите символ, чтобы построить пирамиду: ";
+    cin >> y;
+    p(x, y);    
+    return 0;
+}
